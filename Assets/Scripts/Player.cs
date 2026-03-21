@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (rb != null ) Debug.LogWarning("PlayerController needs a Rigidbody2D.");
+        if (rb == null ) Debug.LogWarning("PlayerController needs a Rigidbody2D.");
+        rb.freezeRotation = true;
     }
 
     // Update is called once per frame
@@ -30,7 +31,14 @@ public class Player : MonoBehaviour
         {
             moveInput.y = -1f;
         }
-
+        if(Keyboard.current.dKey.isPressed )
+        {
+            moveInput.x = 1f;
+        }
+        if(Keyboard.current.aKey.isPressed )
+        {
+            moveInput.x = -1f;
+        }
         Vector2 movement = moveInput * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position+movement);
         

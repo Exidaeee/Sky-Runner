@@ -1,5 +1,6 @@
 # Sky Runner
-
+Play the Game
+https://play.unity.com/en/games/c332a4eb-11dd-48bc-bddd-0f8bf208f9bc/sky-runner
 ## 📌 About
 
 Sky Runner is a simple 2D endless runner made in Unity.
